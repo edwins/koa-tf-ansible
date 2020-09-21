@@ -1,6 +1,10 @@
 - hosts: type_openstack_compute_floatingip_associate_v2
+  become: yes
+  become_user: root
+  vars:
+    ansible_user: ubuntu
   tasks:
-  - apt:
-      name:
-      - telnet
-  - debug: msg="howdy"
+    - apt:
+        name:
+        - telnet
+    - debug: msg="howdy"

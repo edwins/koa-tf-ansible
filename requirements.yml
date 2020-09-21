@@ -1,0 +1,2 @@
+- src: cyverse-ansible.docker
+  name: docker
