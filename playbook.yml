@@ -4,9 +4,12 @@
   vars:
     ansible_user: ubuntu
   tasks:
+    - wait_for:
+        host: "{{ ansible_ssh_host|default(ansible_host))|default(inventory_hostname }}"
+        port: 22
+        search_regex: OpenSSH
+        delay: 20
     - apt:
         name:
         - telnet
-      retries: 3
-      delay: 3
     - debug: msg="howdy"
