@@ -7,4 +7,6 @@
     - apt:
         name:
         - telnet
+      retries: 3
+      delay: 3
     - debug: msg="howdy"
